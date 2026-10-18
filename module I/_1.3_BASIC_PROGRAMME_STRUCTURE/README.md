@@ -3,7 +3,7 @@
 ## Structure of a Java Program
 
 ```java
-package city.college;          // 1. package (optional, must be first)
+package vgu.college;          // 1. package (optional, must be first)
 
 import java.util.Scanner;      // 2. import (optional)
 
@@ -63,7 +63,7 @@ Example: [CommandLineArgument.java](CommandLineArgument.java)
 | Method | camelCase | `getName()` |
 | Variable | camelCase | `rollNo` |
 | Constant | UPPER_CASE | `PASS_MARK` |
-| Package | lowercase | `city.college` |
+| Package | lowercase | `vgu.college` |
 
 Example: [Student.java](Student.java)
 

@@ -43,7 +43,6 @@ Students learn how Java runs, the language basics they need, and how to design c
 - Operators: arithmetic, relational, logical, bitwise, shift, assignment, ternary, `instanceof`; precedence and associativity
 - Control statements: `if-else`, `switch` (including the enhanced `switch`), `for`, `while`, `do-while`, enhanced `for`; `break`, `continue`, labelled `break`
 - Input and output: `Scanner`, `System.out.print`, `println`, `printf`
-- Arrays: one-dimensional, two-dimensional and jagged arrays; the `length` property; the `Arrays` utility class
 - Strings: `String` immutability, the string pool, common methods, `==` vs `equals()`, `StringBuilder` and `StringBuffer`
 - Wrapper classes, autoboxing and unboxing
 

@@ -14,5 +14,13 @@
 // | `boolean` | `Boolean` |
 
 public class Wrapper {
+
+    public static void main(String[] args) {
+        int a = 10;
+        System.out.println("Primitive int: " + a);
+
+        Integer b = Integer.valueOf(a); // Boxing
+        System.out.println("Wrapper Integer: " + b);
+    }
     
 }

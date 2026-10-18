@@ -1,6 +1,6 @@
 public class SwitchCase {
     public static void main(String[] args) {
-        int day = 3;
+        int day = 10;
 
         switch (day) {
             case 1:
@@ -17,7 +17,7 @@ public class SwitchCase {
                 break;
             case 5:
                 System.out.println("Friday");
-                break;
+                
             case 6:
             case 7:
                 System.out.println("Weekend");
