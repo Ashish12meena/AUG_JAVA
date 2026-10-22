@@ -42,6 +42,6 @@ Examples:
 
 - If both parents have `work()`, Java cannot decide which one the child gets.
 - So `class Coordinator extends ExamCell, SportsCell` is a **compile error**.
-- Interfaces solve it: the class writes its own `work()` (see 2.11 `MultipleInterfaces.java`).
+- Interfaces solve it: the class writes its own `work()` (see 2.11 `Interfaces.java`, a teaching assistant who studies and teaches).
 
 Example: [DiamondProblem.java](DiamondProblem.java)
