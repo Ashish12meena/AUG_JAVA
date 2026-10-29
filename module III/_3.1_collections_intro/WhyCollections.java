@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.SequencedCollection;
 import java.util.Stack;
 
 class Student {
@@ -24,10 +25,10 @@ public class WhyCollections {
     public static void main(String[] args) {
         
         // // 1. Array: size is fixed when it is made
-        // Student[] section = new Student[3];
-        // section[0] = new Student(101, "Hita", 438);
-        // section[1] = new Student(102, "Sakshi", 244);
-        // section[2] = new Student(103, "Somya", 465);
+        Student[] section = new Student[3];
+        section[0] = new Student(101, "Hita", 438);
+        section[1] = new Student(102, "Sakshi", 244);
+        section[2] = new Student(103, "Somya", 465);
         // // section[3] = new Student(104, "Ritika", 412);   // ERROR at run time: ArrayIndexOutOfBoundsException
 
         // // to find Somya we must write our own loop
@@ -41,6 +42,8 @@ public class WhyCollections {
 
         // 2. ArrayList: grows by itself and has ready-made methods
         List<Student> list = new ArrayList<>();         // interface on the left, class on the right
+        // SequencedCollection
+        // Collection;
         list.add(new Student(101, "Hita", 438));
         list.add(new Student(102, "Sakshi", 244));
         list.add(new Student(103, "Somya", 465));

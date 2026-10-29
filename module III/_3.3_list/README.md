@@ -1,65 +1,35 @@
 # 3.3 List
 
-Example: [Lists.java](Lists.java) (section register, notice board, subjects)
+A **List** keeps elements in order and lets us reach any position by its index, like a register.
+The topic has one interface and several classes that store the data in very different ways, so it is taught in four parts.
 
-## Definitions
+## Reading Order
 
-- **List:** An **ordered** collection that allows **duplicates** and gives access by **index** (0, 1, 2 ...).
-- **`ArrayList`:** A List that uses a **resizable array** inside. Fast to read by index.
-- **`LinkedList`:** A List made of **nodes**; each node knows the one before and after it (doubly linked). Fast to add/remove at the ends. It is also a `Deque` (3.5).
-- **`Vector` and `Stack`:** Old (**legacy**) classes. `Vector` is a synchronised ArrayList; `Stack` extends `Vector` (LIFO).
+| Part | Notes | Question it answers | Program |
+| --- | --- | --- | --- |
+| 1 | [01_ListInterface.md](01_ListInterface.md) | What makes a List different from other collections? | [Lists.java](Lists.java) |
+| 2 | [02_ArrayList.md](02_ArrayList.md) | How can an array grow? What happens inside `ArrayList`? | [CustomArrayList.java](CustomArrayList.java) |
+| 3 | [03_LinkedList.md](03_LinkedList.md) | Why another List? When is `LinkedList` better? | [CustomLinkedList.java](CustomLinkedList.java) |
+| 4 | [04_LegacyAndFixedLists.md](04_LegacyAndFixedLists.md) | What are `Vector` and `Stack`? How do I make a list that cannot change? | [Lists.java](Lists.java) (last part) |
 
-## Example
+## The Big Picture
 
-```java
-List<Student> section = new ArrayList<>();
-section.add(new Student(101, "Hita", 438));
-section.add(3, new Student(104, "Ritika", 412));   // insert at index 3
-section.get(0);                                      // Hita
+```
+              List  (interface: order + index + duplicates)
+        /         |           \
+  ArrayList   LinkedList     Vector  (legacy)
+  (array)     (nodes)          |
+                             Stack   (legacy)
 ```
 
-## List Methods
+- **One interface, many classes.** All of them have `get(i)`, `add(i, x)` ... but the **speed** of each method depends on how the data is stored inside.
+- Default choice: **`ArrayList`**.
 
-| Method | Does | In our program |
-| --- | --- | --- |
-| `get(i)` | Element at index i | `get(0)` → Hita |
-| `set(i, x)` | Replace element at i | Sakshi's re-checked result |
-| `add(i, x)` | Insert at i, others move right | Ritika joins at index 3 |
-| `remove(i)` | Remove at i, others move left | Disha moves to section B |
-| `indexOf(x)` | Index of x (or -1) | Somya → 2 |
-| `subList(a, b)` | Part from a to b-1 | Front bench: index 0, 1 |
+## Run
 
-## How `ArrayList` Grows
-
-- Starts with space for **10** elements.
-- When full, it makes a **new array 1.5 times bigger** and copies everything.
-- We never see this: we just call `add()`.
-
-## `ArrayList` vs `LinkedList`
-
-| | `ArrayList` | `LinkedList` |
-| --- | --- | --- |
-| Inside | Resizable array | Doubly linked nodes |
-| `get(i)` | Fast (jumps to index) | Slow (walks node by node) |
-| Add/remove in the middle | Slow (shifts elements) | Fast once the place is found |
-| Add/remove at the start | Slow | Fast (`addFirst`, `removeFirst`) |
-| Use when | Mostly reading (register, lists) | Mostly adding/removing at the ends |
-
-- In practice `ArrayList` is the default choice.
-
-## Immutable List: `List.of()`
-
-```java
-List<String> subjects = List.of("Java", "DBMS", "Maths", "English", "Networks");
-// subjects.add("Python");   // ERROR at run time: UnsupportedOperationException
+```
+javac Lists.java
+java Lists
 ```
 
-- Use for data that must never change (the 5 subjects).
-
-## Important Points
-
-- Index starts at **0**. A wrong index → `IndexOutOfBoundsException`.
-- Duplicates allowed: `[Hita, Somya, Hita]`.
-- Insertion order is kept.
-- `println(list)` prints every element using `toString()`.
-- `Vector`/`Stack` are slow (every method is synchronised). Use `ArrayList` and `ArrayDeque` instead.
+`CustomArrayList` and `CustomLinkedList` have no `main()`; they are "build your own" classes to read with Part 2 and Part 3.

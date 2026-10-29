@@ -37,7 +37,7 @@ public class Lists {
             System.out.println(i + " -> " + section.get(i));
         }
 
-        // Sakshi's paper is re-checked: replace her record at index 1
+        // // Sakshi's paper is re-checked: replace her record at index 1
         section.set(1, new Student(102, "Sakshi", 310));
         System.out.println("After re-check: " + section.get(1));
 
@@ -50,14 +50,14 @@ public class Lists {
         System.out.println("Students now: " + section.size());
         System.out.println();
 
-        // a List allows duplicates: Hita came to both lectures
+        // // a List allows duplicates: Hita came to both lectures
         List<String> attendance = new ArrayList<>();
         attendance.add("Hita");
         attendance.add("Somya");
         attendance.add("Hita");
         System.out.println("Attendance: " + attendance);
 
-        // LinkedList: notice board, a new notice goes on top
+        // // LinkedList: notice board, a new notice goes on top
         LinkedList<String> notices = new LinkedList<>();
         notices.add("Fee last date 30 Oct");
         notices.addFirst("Java test on Monday");
